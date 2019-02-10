@@ -115,34 +115,6 @@ public class MainActivity extends Activity {
         Log.i(TAG4LOGGING, "JSON-String erhalten: " + httpErgebnisDokument);
 
         return httpErgebnisDokument;
-
-		/*
-		// Schritt 1: Request-Factory holen
-		HttpTransport      httpTransport  = new NetHttpTransport();
-		HttpRequestFactory requestFactory = httpTransport.createRequestFactory();		
-		
-		
-		// Schritt 2: URL erzeugen und URL-Parametern hinzufügen
-	    GenericUrl url = new GenericUrl("https://api.randomuser.me/"); // "API Endpoint"
-
-
-	    
-	    Log.i(TAG4LOGGING, "URL erzeugt: " + url);
-	    
-	    
-	    // Schritt 3: eigentliches Absetzen des Requests
-	    HttpRequest  request      = requestFactory.buildGetRequest(url);
-	    HttpResponse httpResponse = request.execute();	    
-		
-	    
-	    // Schritt 4: Antwort-String (JSON-Format) zurückgeben
-	    String jsonResponseString = httpResponse.parseAsString();	    
-	    
-	    Log.i(TAG4LOGGING, "JSON-String erhalten: " + jsonResponseString);
-	    
-	    
-		return jsonResponseString;
-		*/
 	}	
 	
 	
