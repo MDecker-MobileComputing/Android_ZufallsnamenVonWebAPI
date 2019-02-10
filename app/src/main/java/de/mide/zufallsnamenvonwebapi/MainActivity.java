@@ -51,8 +51,8 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 				
-		_startButton      = (Button)   findViewById( R.id.starteWebRequestButton );	
-		_ergebnisTextView = (TextView) findViewById( R.id.ergebnisTextView       );
+		_startButton      = findViewById( R.id.starteWebRequestButton );
+		_ergebnisTextView = findViewById( R.id.ergebnisTextView       );
 	}
 		
 	
@@ -70,6 +70,7 @@ public class MainActivity extends Activity {
 	    // Hintergrund-Thread mit HTTP-Request starten
 		MeinHintergrundThread mht = new MeinHintergrundThread();
 		mht.start();
+		// als Einzeiler: new MeinHintergrundThread().start();
 	}
 	
 	
@@ -149,7 +150,7 @@ public class MainActivity extends Activity {
 		
 		// Eigentliches Parsen durch Aufruf des Konstruktors der Klasse JSONObject.
 		// Wenn das JSON-Dokument einen syntaktischen Fehler enthält, dann wirft
-		// der Konstruktor eine Exception
+		// der Konstruktor eine Exception.
 		JSONObject jsonObject = new JSONObject(jsonString); 
 		
 		
@@ -170,7 +171,7 @@ public class MainActivity extends Activity {
 			if (resultObject == null) 
 				return "Fehler beim JSON-Parser: User-Objekt mit Index " + i + " war null.";
 			
-			String userString = parseUserObject( resultObject ); 
+			String userString = parseUserObjekt( resultObject );
 			
 			sbuf.append( userString ).append("\n");
 		}
@@ -188,7 +189,7 @@ public class MainActivity extends Activity {
 	 *  
 	 * @throws JSONException Fehler in JSON-Datei
 	 */
-	protected String parseUserObject(JSONObject resultObject) throws JSONException {
+	protected String parseUserObjekt(JSONObject resultObject) throws JSONException {
 		
 		JSONObject nameObject = resultObject.getJSONObject( "name" );
 		if (nameObject == null)
@@ -245,7 +246,8 @@ public class MainActivity extends Activity {
 		/*
 		protected MeinHintergrundThread() {
 			start();
-		} */
+		}
+		*/
 		
 		/**
 		 * Der Inhalt in der überschriebenen <i>run()</i>-Methode
