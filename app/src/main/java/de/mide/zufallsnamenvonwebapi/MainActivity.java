@@ -109,6 +109,7 @@ public class MainActivity extends Activity {
             // JSON-Dokument zeilenweise einlesen
             String zeile = "";
             while ( (zeile = reader.readLine()) != null) {
+
                 httpErgebnisDokument += zeile;
             }
         }
@@ -140,6 +141,7 @@ public class MainActivity extends Activity {
 	protected String parseJSON(String jsonString) throws JSONException {
 				
 		if (jsonString == null || jsonString.trim().length() == 0) {
+
 			return "Leeres JSON-Objekt von Web-API erhalten.";
 		}
 		
@@ -224,7 +226,10 @@ public class MainActivity extends Activity {
 		
 		name = name.trim(); // Leerzeichen am Anfange & Ende entfernen
 		
-		if (name.length() == 0) return "";
+		if (name.length() == 0) {
+
+			return "";
+		}
 		
 		// Eigentliche Umwandlung
 		return name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase();
@@ -256,7 +261,8 @@ public class MainActivity extends Activity {
 		@Override
 		public void run() {
 			
-			try {				
+			try {
+
 				String jsonDocument = holeDatenVonWebAPI();
 				
 				String ergString = parseJSON(jsonDocument);
@@ -264,6 +270,7 @@ public class MainActivity extends Activity {
 				ergbnisDarstellen( "Ergebnis von Web-Request:\n\n" + ergString );
 			}
 			catch (Exception ex) {
+
 				ergbnisDarstellen( "Exception aufgetreten: " + ex.getMessage() );
 			}			
 		}
