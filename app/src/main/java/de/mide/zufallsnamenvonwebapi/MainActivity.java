@@ -48,6 +48,7 @@ public class MainActivity extends Activity {
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 				
@@ -170,8 +171,10 @@ public class MainActivity extends Activity {
 		for (int i = 0; i < anzPersonen; i++) {
 			
 			JSONObject resultObject = (JSONObject)arrayResults.get(i);
-			if (resultObject == null) 
+			if (resultObject == null) {
+
 				return "Fehler beim JSON-Parser: User-Objekt mit Index " + i + " war null.";
+			}
 			
 			String userString = parseUserObjekt( resultObject );
 			
@@ -194,9 +197,10 @@ public class MainActivity extends Activity {
 	protected String parseUserObjekt(JSONObject resultObject) throws JSONException {
 		
 		JSONObject nameObject = resultObject.getJSONObject( "name" );
-		if (nameObject == null)
+		if (nameObject == null) {
+
 			return "Fehler: ResultObject enthielt nicht das Attribut \"name\"";
-		
+		}
 		
 		String vornameString  = nameObject.getString( "first" );
 		String nachnameString = nameObject.getString( "last"  );
@@ -222,8 +226,12 @@ public class MainActivity extends Activity {
 	@SuppressLint("DefaultLocale")
 	protected String ersterBuchstabeGross(String name) {
 		
-		if (name == null) return "";
-		
+		if (name == null) {
+
+			return "";
+		}
+
+
 		name = name.trim(); // Leerzeichen am Anfange & Ende entfernen
 		
 		if (name.length() == 0) {
