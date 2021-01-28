@@ -231,7 +231,6 @@ public class MainActivity extends Activity {
 			return "";
 		}
 
-
 		name = name.trim(); // Leerzeichen am Anfange & Ende entfernen
 		
 		if (name.length() == 0) {
