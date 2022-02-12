@@ -207,8 +207,7 @@ public class MainActivity extends Activity {
         // ... nameObject.getString( "title" )
 
         Log.i(TAG4LOGGING, "Name aus JSON-Objekt: " + vornameString + " " + nachnameString);
-
-
+        
         vornameString  = ersterBuchstabeGross( vornameString  );
         nachnameString = ersterBuchstabeGross( nachnameString );
 
