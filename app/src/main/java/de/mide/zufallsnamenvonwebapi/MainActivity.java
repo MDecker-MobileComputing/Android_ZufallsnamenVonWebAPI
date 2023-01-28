@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
     protected Button _startButton = null;
 
     /**
-         * TextView zur Anzeige des Ergebnisses des Web-Requests (also die zufälligen Namen)
+     * TextView zur Anzeige des Ergebnisses des Web-Requests (also die zufälligen Namen)
      * oder einer Fehlermeldung.
      */
     protected TextView _ergebnisTextView = null;
@@ -49,11 +49,11 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-      super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_main);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-      _startButton      = findViewById( R.id.starteWebRequestButton );
-      _ergebnisTextView = findViewById( R.id.ergebnisTextView       );
+        _startButton      = findViewById( R.id.starteWebRequestButton );
+        _ergebnisTextView = findViewById( R.id.ergebnisTextView       );
     }
 
 
@@ -87,21 +87,21 @@ public class MainActivity extends Activity {
      */
     protected String holeDatenVonWebAPI() throws Exception {
 
-          URL url                                = null;
-          HttpURLConnection conn                 = null;
-          String            httpErgebnisDokument = "";
+        URL url                                = null;
+        HttpURLConnection conn                 = null;
+        String            httpErgebnisDokument = "";
 
 
-          url  = new URL("https://api.randomuser.me/?results=3&gender=male&format=json");
-          conn = (HttpURLConnection) url.openConnection();
-          conn.setRequestMethod("GET"); // Eigentlich nicht nötig, weil "GET" Default-Wert ist.
+        url  = new URL("https://api.randomuser.me/?results=3&gender=male&format=json");
+        conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET"); // Eigentlich nicht nötig, weil "GET" Default-Wert ist.
 
-          if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
+        if (conn.getResponseCode() != HttpURLConnection.HTTP_OK) {
 
             String errorMessage = "HTTP-Fehler: " + conn.getResponseMessage();
             throw new Exception( errorMessage );
 
-          } else {
+        } else {
 
             InputStream is        = conn.getInputStream();
             InputStreamReader ris = new InputStreamReader(is);
@@ -113,23 +113,23 @@ public class MainActivity extends Activity {
 
                 httpErgebnisDokument += zeile;
             }
-          }
+        }
 
-          Log.i(TAG4LOGGING, "JSON-String erhalten: " + httpErgebnisDokument);
+        Log.i(TAG4LOGGING, "JSON-String erhalten: " + httpErgebnisDokument);
 
-          return httpErgebnisDokument;
+        return httpErgebnisDokument;
     }
 
 
     /**
      * Parsen des JSON-Dokuments <i>jsonString</i>, das von der Web-API
      * zurückgeliefert wurde.<br><br>
-         *
+     *
      * Es wird der in Android seit API-Level eingebaute JSON-Parser verwendet:
      * <a href="http://developer.android.com/reference/org/json/JSONObject.html">
      * http://developer.android.com/reference/org/json/JSONObject.html</a>.
-         * <br><br>
-         *
+     * <br><br>
+     *
      * Es werden <b>nicht</b> alle in dem JSON-Dokument enthaltenen Informationen
      * ausgewertet.
      *
@@ -207,7 +207,7 @@ public class MainActivity extends Activity {
         // ... nameObject.getString( "title" )
 
         Log.i(TAG4LOGGING, "Name aus JSON-Objekt: " + vornameString + " " + nachnameString);
-        
+
         vornameString  = ersterBuchstabeGross( vornameString  );
         nachnameString = ersterBuchstabeGross( nachnameString );
 

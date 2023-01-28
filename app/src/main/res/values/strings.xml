@@ -4,11 +4,11 @@
     <string name="app_name"            >Zufallsnamen von Web-API</string>
     <string name="title_activity_main" >Zufalls-Namen von Web-API abrufen</string>
 
-    
-	<string name="kurzanleitung" >Drücken Sie auf den Button unten, um über einen Web-API-Request
+
+    <string name="kurzanleitung" >Drücken Sie auf den Button unten, um über einen Web-API-Request
                                   drei zufällig erzeugte Personen-Namen von <i>http://randomuser.me</i>
                                   abzurufen.</string>
-                                 
-    <string name="start_button_label">Zufalls-Personen abrufen</string>	
-    
+
+    <string name="start_button_label">Zufalls-Personen abrufen</string>
+
 </resources>

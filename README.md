@@ -1,10 +1,8 @@
-# Android-App "Zufallsnamen von Web-API"
-
+# Android-App "Zufallsnamen von Web-API" #
 
 Simple Android app that fetches three random names from the Web API provided by [randomuser.me](https://randomuser.me/).
 
 The author of this app is *NOT* related to the developer/provider of [randomuser.me](https://randomuser.me/).
-
 
 <br>
 
@@ -16,8 +14,11 @@ Not all data returned by the requests to this URL is displayed by the app.
 
 Identifiers (names for classes, variables and methods), UI text and (JavaDoc) comments are in German only.
 
+<br>
+
 ----
-## Screenshots
+
+## Screenshots ##
 
 ![Screenshot 1](screenshot_1.png)  ![Screenshot 2](screenshot_2.png)
 
