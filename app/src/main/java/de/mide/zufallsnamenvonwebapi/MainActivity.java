@@ -150,12 +150,10 @@ public class MainActivity extends Activity {
         // weil hiermit String-Konkatenationen effizienter sind.
         StringBuffer sbuf = new StringBuffer();
 
-
         // Eigentliches Parsen durch Aufruf des Konstruktors der Klasse JSONObject.
         // Wenn das JSON-Dokument einen syntaktischen Fehler enthält, dann wirft
         // der Konstruktor eine Exception.
         JSONObject jsonObject = new JSONObject(jsonString);
-
 
         // Das JSON-Objekt enthält auf oberster Ebene nur das Attribut <i>results</i>,
         // welches einen Array mit den einzelnen Personen-Datensätzen enthält.
@@ -164,7 +162,8 @@ public class MainActivity extends Activity {
         JSONArray arrayResults = jsonObject.getJSONArray( "results" );
         int anzPersonen = arrayResults.length();
 
-        sbuf.append("Anzahl Personen-Datensätze von Web-API erhalten: ").append(anzPersonen).append("\n\n");
+        sbuf.append("Anzahl Personen-Datensätze von Web-API erhalten: ")
+            .append(anzPersonen).append("\n\n");
 
 
         // Einzelne Personen-Unterobjekte aus JSON-Objekt holen
