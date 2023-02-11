@@ -20,12 +20,18 @@ Identifiers (names for classes, variables and methods), UI text and (JavaDoc) co
 
 ## Screenshots ##
 
-![Screenshot 1](screenshot_1.png)  ![Screenshot 2](screenshot_2.png)
+<br>
 
+![Screenshot 1](screenshot_1.png)  ![Screenshot 2](screenshot_2.png)
 
 <br>
 
 ----
-# License
+
+## License ##
+
+<br>
 
 See the [LICENSE file](LICENSE.md) for license rights and limitations (BSD 3-Clause License).
+
+<br>
