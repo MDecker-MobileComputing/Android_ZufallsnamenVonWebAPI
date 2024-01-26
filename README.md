@@ -1,5 +1,7 @@
 # Android-App "Zufallsnamen von Web-API" #
 
+<br>
+
 Simple Android app that fetches three random names from the Web API provided by [randomuser.me](https://randomuser.me/).
 
 The author of this app is *NOT* related to the developer/provider of [randomuser.me](https://randomuser.me/).
